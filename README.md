@@ -1,8 +1,13 @@
 ### README
 
+
+**SUBMITTING COMPLETED ASSIGNMENT**
+
+* Clone this repository, create a branch and commit your changes there and push. 
+* Once work is completed, create a new Pull Request between master and your branch: https://github.com/doximity/blgr/compare
+
 **TASKS**
 
-* In a branch...
 * Create Post resource, seed with 1000 posts
 * Add basic account creation and login as well as specs
 * Add the ability to create and delete posts without using any JS
