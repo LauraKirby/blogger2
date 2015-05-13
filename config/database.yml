@@ -7,8 +7,8 @@ default: &default
 
 development:
   <<: *default
-  database: blgr2_dev
+  database: blgr_dev
 
 test:
   <<: *default
-  database: blgr2_test
+  database: blgr_test
