@@ -2,7 +2,8 @@
 
 **Please read instructions carefully**
 
-* Clone this repository, create a local git branch and commit your changes to said branch
+* Clone this repository, create a local git branch and commit your changes to said branch. 
+* **DO NOT PUSH TO MASTER**, **DO NOT FORK THE REPOSITORY** 
 * Push branch to github
 * Once work is completed, create a new Pull Request between master and your branch: https://github.com/doximity/blgr2/compare
 * Notify us you've you've completed the assignment
