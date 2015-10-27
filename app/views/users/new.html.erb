@@ -1,2 +1,16 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<h2>Sign-up</h2>
+	
+	<%= form_for @user, :html => { :multipart => true }  do |f| %>
+			  <div>
+					<%= f.text_field :first_name, :placeholder => "First Name"%>
+			  </div>
+			  <div>
+					<%= f.text_field :email, :placeholder => "Email" %>
+			  </div>
+			  <div>
+				  <%= f.password_field :password, :placeholder => "Password" %>
+			  </div>
+			  <div>
+			  	<%= f.submit "Sign-up"%>
+			  </div>
+        <% end %>
