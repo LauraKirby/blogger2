@@ -20,5 +20,18 @@ gem "authlogic"
 gem "slim"
 
 group :development, :test do
+	#build application tests
   gem 'rspec-rails', '~> 3.0'
+  #use to build instances of your models for use in test scenarios
+  gem 'factory_girl_rails'
+  #use to automate various browsers to simulate user interactions with your app
+  gem 'capybara'
+  #add ensure data base takes care of factory girl data
+  gem 'database_cleaner'
+  # Debugging tool
+	gem 'pry-rails'
+	# Add fake data
+	gem 'faker'
+	# Opens default web browser upon failed integration specs and shows what your application is rendering
+	gem 'launchy'
 end
