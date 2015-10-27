@@ -10,16 +10,21 @@ describe Post do
 	end 
 	
 	it "is invalid without a title" do
+		#build instantiates a new model, but doesn’t save it
+		#this allows us to test the model before it breaks due to the validation
 		post = build(:post, title: nil)
 		expect(post).not_to be_valid 
 	end 
 
   
   it "has initial state of unpublished" do
+  	post = create(:post)
+  	expect(post.published).to be false
   end
 
   it "state can be changed to published" do
-
+  	post = create(:post)
+  	expect(post.published = true).to be true
   end
 
   it "belongs to a user" do
