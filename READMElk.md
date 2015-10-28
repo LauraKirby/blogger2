@@ -31,6 +31,7 @@
 9. Add the ability to filter based on post state (published/unpublised) using scopes/AREL  
 
 10. Add authentication using authlogic  
+	- will need this sooner, so that i do not built current_user logic if it will be given to me with authlogic
 	- Review Documentation:  
 			https://github.com/binarylogic/authlogic  
 			https://github.com/binarylogic/authlogic_example  

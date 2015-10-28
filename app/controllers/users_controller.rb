@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
+	before_filter :require_user, :only => [:show, :edit, :update]
   def index
+
   end
 
   def new
@@ -7,29 +9,26 @@ class UsersController < ApplicationController
   end
 
   def create 
-  	@user = User.create(user_params)
-  		if @user.save        
-  			redirect_to user_show
-  		else
-  			render :new
-  		end
+  	@user = User.new(users_params)
+       if @user.save
+         flash[:success] = "User registered!"
+         redirect_to root_path
+       else
+         render :new
+       end
   end 
 
   def show
-
   end
 
   def edit
   end
-end
+
+  private
+
+  def users_params
+      params.require(:user).permit(:email, :password, :password_confirmation)
+  end
 
 
-private
-
-  def user_params
-  	params.require(:user).permit(
-  		:first_name,
-  		:email,
-  		:password
-  		)
-  end	
+end #end UsersController
