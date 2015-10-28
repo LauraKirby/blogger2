@@ -17,4 +17,7 @@
 //= require_tree ./collections
 //= require_tree ./views
 //= require_tree ./routers
+//= require angular/lib/angular.min
+//= require_tree ./angular/lib
+//= require angular/app
 //= require_tree .
