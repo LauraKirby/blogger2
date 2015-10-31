@@ -15,4 +15,18 @@
 
   <% if current_user %>
     <div class="page-header"><h3>Welcome back  <%= current_user.email %>!</h3></div>
-  <% end %>
+    <%= link_to "Add New Post", new_user_post_path(current_user) %>
+    <% current_user.posts.each do |post| %>
+    <p>
+      -----------------------------
+    </p>
+    <p><%= link_to "see post #{post.title}", post_path(post) %>
+    </p>
+    <p>
+      <%= link_to "Edit #{post.title}", edit_post_path(post) %>
+    </p>
+    <p>
+      <%= link_to "Delete #{post.title}", post_path(post), method: :delete, data: {confirm: "are you sure?"} %>
+    </p>
+  <%end%> 
+  <%end%> 

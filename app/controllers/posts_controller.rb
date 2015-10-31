@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+	before_action :find_post, only: [:show, :edit, :update, :destroy]
 
 	def index
 		@posts = Post.all
@@ -19,7 +20,6 @@ class PostsController < ApplicationController
 	end 
 
 	def show
-		@posts = current_user.posts.all
 	end 
 
 	def edit
@@ -29,6 +29,8 @@ class PostsController < ApplicationController
 	end 
 
   def destroy
+  	@post.destroy 
+  	redirect_to user_path(current_user), alert: "deleted"
   end 
 
 	private
@@ -36,5 +38,9 @@ class PostsController < ApplicationController
   def post_params
       params.require(:post).permit(:title, :content)
   end
+
+  def find_post
+  	@post = Post.find params[:id]
+  end 
 
 end #end PostsController
