@@ -1,0 +1,13 @@
+<%= form_for [current_user, @post] do |f| %>
+  <%= f.label "Blog Title" %>
+  <%= f.text_field :title %>
+  <p>
+    <%= f.label "Content" %>
+    <p>
+    	<%= f.text_area :content %>
+    </p>
+  </p>
+  <p>
+		<%= f.submit "Create Post" %>
+  </p>
+<% end %>

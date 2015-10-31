@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20151027235602) do
     t.string   "title"
     t.text     "content"
     t.boolean  "published",  default: false
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

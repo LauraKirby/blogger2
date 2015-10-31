@@ -10,16 +10,16 @@ class PostsController < ApplicationController
 	end 
 
 	def create 
-		@post = @current_user.posts.build(post_params)
-		if @book.save 
-			redirect_to user_posts_path(@current_user), flash: {success: "Created"}
+		@post = current_user.posts.create(post_params)
+		if @post.save
+			redirect_to user_posts_path(current_user), flash: {success: "Created"}
 		else 
 			render :new
 		end 
 	end 
 
 	def show
-		@posts = @current_user.posts.all
+		@posts = current_user.posts.all
 	end 
 
 	def edit
@@ -33,7 +33,7 @@ class PostsController < ApplicationController
 
 	private
 
-  def posts_params
+  def post_params
       params.require(:post).permit(:title, :content)
   end
 
