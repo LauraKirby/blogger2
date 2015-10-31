@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	before_filter :require_user, :only => [:show, :edit, :update]
+
   def index
 
   end
@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   	@user = User.new(users_params)
        if @user.save
          flash[:success] = "User registered!"
-         redirect_to root_path
+         redirect_to user_path(@user)
        else
          render :new
        end
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
   private
 
   def users_params
-      params.require(:user).permit(:email, :password, :password_confirmation)
+      params.require(:user).permit(:first_name,:email, :password, :password_confirmation)
   end
 
 
