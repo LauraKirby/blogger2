@@ -26,11 +26,15 @@ class PostsController < ApplicationController
 	end 
 
 	def update
+		@post.update post_params
+		if @post.save 
+			redirect_to user_posts_path(current_user)
+		end 
 	end 
 
   def destroy
   	@post.destroy 
-  	redirect_to user_path(current_user), alert: "deleted"
+  	redirect_to user_posts_path(current_user), alert: "deleted"
   end 
 
 	private
