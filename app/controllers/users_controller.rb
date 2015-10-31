@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def create 
-  	@user = User.new(users_params)
+  	@user = User.create(users_params)
        if @user.save
          flash[:success] = "User registered!"
          redirect_to user_path(@user)
