@@ -7,11 +7,11 @@
 <p>
 	 <% unless !@user_posts %>
 	 <h3>My Posts</h3>
-	 	<% @user_posts.each do |post| %>
+	 	<% @user_posts.each { |post| %>
 		<p>
 			Title: <%= post.title %>
 		</p>
-	 	<% end %>
+	 	<% } %>
 	 <% end %>
 
 </p>

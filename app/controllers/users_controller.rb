@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-  def index 
-  end 
 
   def new
   	@user = User.new
@@ -10,6 +8,7 @@ class UsersController < ApplicationController
   	@user = User.create(users_params)
        if @user.save
          flash[:success] = "User registered!"
+         
          redirect_to user_path(@user)
        else
          render :new

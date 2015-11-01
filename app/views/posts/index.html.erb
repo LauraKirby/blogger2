@@ -10,7 +10,7 @@
 
     <%= link_to "Add New Post", new_user_post_path(current_user) %>
     <h3>All Blog Posts</h3>
-    <% @posts.each do |post| %>
+    <% @posts.each { |post| %>
     <p>
       -----------------------------
     </p>
@@ -22,5 +22,5 @@
     <p>
       <%= link_to "Delete: #{post.title}", post_path(post), method: :delete, data: {confirm: "are you sure?"} %>
     </p>
-   <%end%> 
+   <%}%> 
   <%end%> 

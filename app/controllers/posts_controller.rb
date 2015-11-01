@@ -12,9 +12,10 @@ class PostsController < ApplicationController
 	end 
 
 	def create 
-		@post = current_user.posts.create(post_params)
+		@post = current_user.posts.create post_params
+		
 		if @post.save
-			redirect_to user_posts_path(current_user), flash: {success: "Created"}
+			redirect_to user_posts_path(current_user), flash: { success: "Created" }
 		else 
 			render :new
 		end 
@@ -25,24 +26,25 @@ class PostsController < ApplicationController
 	end 
 
 	def edit
-		@author = User.find(@post.user_id)
 		if current_user.id == @author.id 
 			render :edit
 		else 
 			redirect_to root_path
+
 			flash[:success] = "You must be the author to edit a post"
 		end 
 	end 
 
 	def update
-		@post.update post_params
+		@post.update(post_params)
 		if @post.save 
-			redirect_to root_path
+			redirect_to(root_path)
 		end 
 	end 
 
   def destroy
   	@post.destroy 
+
   	redirect_to root_path, alert: "deleted"
   end 
 
@@ -53,7 +55,7 @@ class PostsController < ApplicationController
   end
 
   def find_post
-  	@post = Post.find params[:id]
+  	@post = Post.find(params[:id])
   end 
 
   def find_author
