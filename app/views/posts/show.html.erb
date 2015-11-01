@@ -1,7 +1,17 @@
 <h1>Post Show Page</h1>
 <h3>
-	<%= @post.title %>
+	Title: <%= @post.title %>
 </h3>
 <p>
-	<%= @post.content %>
+	Author: <%= @author.first_name %>
+</p>
+<p>
+	Content: <%= @post.content %>
+</p>
+<p>
+	<% if @post.published == false  %>
+	<p>Published: False</p>
+	<% else %>
+	<p>Published: True</p>
+	<% end %>
 </p>

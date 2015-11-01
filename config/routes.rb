@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   delete '/sign_out', to: 'user_sessions#destroy', as: :sign_out
   get '/sign_in', to: 'user_sessions#new', as: :sign_in
+
   resources :user_sessions, only: [:create, :destroy]
   resources :users do 
   	resources :posts, shallow: true
@@ -20,7 +21,8 @@ Rails.application.routes.draw do
 end #end Rails.application.routes
 
 
-# Prefix Verb   URI Pattern                         Controller#Action
+
+#   Prefix Verb   URI Pattern                         Controller#Action
 #          root GET    /                                   posts#index
 #      sign_out DELETE /sign_out(.:format)                 user_sessions#destroy
 #       sign_in GET    /sign_in(.:format)                  user_sessions#new

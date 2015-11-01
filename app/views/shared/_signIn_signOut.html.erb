@@ -1,10 +1,8 @@
 
   <div class="container">
-      <%= link_to 'Posts root_path', root_path %>
     <ul>
-        <li><%= link_to 'Home', root_path %></li>
+        <li><%= link_to 'Home / Posts Root', root_path %></li>
         <% if current_user %>
-          <li><span><%= current_user.email %></span></li>
           <li><%= link_to 'Sign Out', sign_out_path, method: :delete %></li>
         <% else %>
           <li><%= link_to 'Sign In', sign_in_path %></li>
@@ -15,4 +13,16 @@
           <%= value %>
         </div>
       <% end %>
-  </div>
+ 
+
+
+  <% if !current_user %>
+    <p>Or Sign Up to get started.</p>
+    <p>
+      <%= link_to new_user_path do %>
+      Sign Up &raquo;
+      <% end %>
+    </p>
+  <% end %>
+  
+</div>

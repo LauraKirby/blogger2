@@ -1,8 +1,6 @@
 class UsersController < ApplicationController
-
-  def index
-
-  end
+  def index 
+  end 
 
   def new
   	@user = User.new
@@ -19,9 +17,7 @@ class UsersController < ApplicationController
   end 
 
   def show
-  end
-
-  def edit
+      @user_posts = current_user.posts.all
   end
 
   private

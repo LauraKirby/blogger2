@@ -1,2 +1,17 @@
-<h1>Edit Your Post</h1>
-<%= render 'form' %>
+<h1>Edit Post</h1>
+		<%= form_for [@post] do |f| %>
+  			<%= f.label "Blog Title" %>
+  			<%= f.text_field :title %>
+  			<p>
+    			<%= f.label "Content" %>
+    		  <p>
+    			  <%= f.text_area :content %>
+    		  </p>
+  			</p>
+        <p>
+          Published: <%= f.check_box :published %>
+        </p>
+        <p>
+		      <%= f.submit %>
+        </p>
+<% end %>

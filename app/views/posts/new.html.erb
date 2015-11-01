@@ -1,4 +1,17 @@
 <h1>New Post</h1>
 <p>Author: <%= current_user.first_name %></p>
 
-<%= render 'form' %>
+<%= form_for [current_user, @post] do |f| %>
+  <%= f.label "Blog Title" %>
+  <%= f.text_field :title %>
+  <p>
+    <%= f.label "Content" %>
+    <p>
+    	<%= f.text_area :content %>
+    </p>
+  </p>
+  <p>Published <%= f.check_box :published %></p>
+  <p>
+		<%= f.submit %>
+  </p>
+<% end %>

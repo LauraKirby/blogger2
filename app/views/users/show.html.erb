@@ -1,11 +1,17 @@
-<h1><%= current_user.first_name %>'s Profile</h1>
+<h1><%= current_user.first_name %>'s Show Page</h1>
 
-<h3>View information about logged in user</h3>
+<h3>My Information</h3>
 <p>Name: <%= current_user.first_name %></p>
 <p>Email: <%= current_user.email %></p>
 
+<p>
+	 <% unless !@user_posts %>
+	 <h3>My Posts</h3>
+	 	<% @user_posts.each do |post| %>
+		<p>
+			Title: <%= post.title %>
+		</p>
+	 	<% end %>
+	 <% end %>
 
-<p>Find me in app/views/users/show.html.erb</p>
-
-
-<%= link_to "new post", new_user_post_path(:user_id) %>
+</p>
