@@ -12,12 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree ../templates
-//= require_tree ./models
-//= require_tree ./collections
-//= require_tree ./views
-//= require_tree ./routers
-//= require angular/lib/angular.min
-//= require_tree ./angular/lib
-//= require angular/app
+//= require angular
+//= require angular-animate
+//= require angular-ui-router
+//= require angular-rails-templates
 //= require_tree .
+//= require_tree ../templates

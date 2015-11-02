@@ -1,20 +1,21 @@
 Rails.application.routes.draw do
 
-
+  # keep routes in this order so that angular doesn't interfere 
   root to: "posts#index"
-  # root 'application#index'
-  # get '*path' => 'application#index'
-  # To do, change 'get' to 'delete'
-  # changed DELETE to GET bc the following makes a GET request <li><%= link_to 'Sign Out', sign_out_path, method: :delete %></li> 
-
-  delete '/sign_out', to: 'user_sessions#destroy', as: :sign_out
   get '/sign_in', to: 'user_sessions#new', as: :sign_in
+  delete '/sign_out', to: 'user_sessions#destroy', as: :sign_out
+
+  # get '*path' => 'static_pages#index'
+
+  
+  
 
   resources :user_sessions, only: [:create, :destroy]
   resources :users do 
   	resources :posts, shallow: true
   end 
 
+  # These two routes make the tests pass
   # get '/users/edit', to:  'users#edit'
 	# get '/users/show', to:  'users#show'
 
